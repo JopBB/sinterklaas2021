@@ -1,0 +1,184 @@
+<html>
+	<head>
+		    <meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<!-- Compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		 <script type="text/javascript" src="script.js"></script>
+	</head>
+	<body>
+		<div class="container" id="tilesWrapper">
+			<h1>Kaartjes gedraaid: <span id="flipCounter">0</span></h1>
+			<div class="row">
+				<div class="col s6">
+					<div onClick="cardClicked(this.id)" class="card tile" id="A1">
+						<div class="cardFrontside card-content">
+							<img width="100%" src="images/nien.png">
+						</div>
+						<div class="cardBackside card-content">
+							Igor
+						</div>
+					</div>
+				</div>
+				<div class="col s6">
+					<div onClick="cardClicked(this.id)" class="card tile" id="C1">
+						<div class="cardFrontside card-content">
+							<img width="100%" src="images/nien.png">
+						</div>
+						<div class="cardBackside card-content">
+							Annemieke
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="col s6">
+					<div onClick="cardClicked(this.id)" class="card tile" id="B1">
+						<div class="cardFrontside card-content">
+							<img width="100%" src="images/nien.png">
+						</div>
+						<div class="cardBackside card-content">
+							Ellis
+						</div>
+					</div>
+				</div>
+					<div class="col s6">
+					<div onClick="cardClicked(this.id)" class="card tile" id="F2">
+						<div class="cardFrontside card-content">
+							<img width="100%" src="images/nien.png">
+						</div>
+						<div class="cardBackside card-content">
+							Praat zoveel aan een stuk door, het houdt maar niet op, en het is af en toe zelfs zo erg dat het niet meer op 1 kaartje past, gaat maar door en gaat maar door
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s6">
+					<div onClick="cardClicked(this.id)" class="card tile" id="E2">
+						<div class="cardFrontside card-content">
+							<img width="100%" src="images/nien.png">
+						</div>
+						<div class="cardBackside card-content">
+							Doet nooit iets en delegeert alleen maar
+						</div>
+					</div>
+				</div>
+				
+				<div class="col s6">
+					<div onClick="cardClicked(this.id)" class="card tile" id="C2">
+						<div class="cardFrontside card-content">
+							<img width="100%" src="images/nien.png">
+						</div>
+						<div class="cardBackside card-content">
+							Drama koningin
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s6">
+					<div onClick="cardClicked(this.id)" class="card tile" id="D1">
+						<div class="cardFrontside card-content">
+							<img width="100%" src="images/nien.png">
+						</div>
+						<div class="cardBackside card-content">
+							Lisa
+						</div>
+					</div>
+				</div>
+				<div class="col s6">
+					<div onClick="cardClicked(this.id)" class="card tile" id="B2">
+						<div class="cardFrontside card-content">
+							<img width="100%" src="images/nien.png">
+						</div>
+						<div class="cardBackside card-content">
+							Meeloper 1e klas
+						</div>
+					</div>
+				</div>
+			
+				
+			</div>
+			<div class="row">
+				<div class="col s6">
+					<div onClick="cardClicked(this.id)" class="card tile" id="A2">
+						<div class="cardFrontside card-content">
+							<img width="100%" src="images/nien.png">
+						</div>
+						<div class="cardBackside card-content">
+							Initiatiefloze zoutzak
+						</div>
+					</div>
+				</div>
+				<div class="col s6">
+					<div onClick="cardClicked(this.id)" class="card tile" id="E1">
+						<div class="cardFrontside card-content">
+							<img width="100%" src="images/nien.png">
+						</div>
+						<div class="cardBackside card-content">
+							Martin
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="col s6">
+					<div onClick="cardClicked(this.id)" class="card tile" id="F1">
+						<div class="cardFrontside card-content">
+							<img width="100%" src="images/nien.png">
+						</div>
+						<div class="cardBackside card-content">
+							Evy
+						</div>
+					</div>
+				</div>
+				<div class="col s6">
+					<div onClick="cardClicked(this.id)" class="card tile" id="D2">
+						<div class="cardFrontside card-content">
+							<img width="100%" src="images/nien.png">
+						</div>
+						<div class="cardBackside card-content">
+							Slechte moeder en partner
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			<div id="opstartModal" class="modal">
+		    <div class="modal-content">
+		      <h4>Welkom bij roddelmemory!</h4>
+		      <p>Jij denkt dat je de beste roddeltante van Lingewaard bent? Test het hier, met het enige echte roddelmemory! </p>
+		      <p>Bij memory probeer je steeds twee kaartjes te vinden die bij elkaar horen. Weet jij welke mensen bij welke roddels horen? Probeer het nu!</p>
+		      <p>Haal jij een score van 30 punten of minder, dan neem jij de grote prijs mee naar huis!</p>
+		    </div>
+		    <div class="modal-footer">
+		      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Ik snap het!</a>
+		    </div>
+		  </div>
+
+		  <div id="afsluitModal" class="modal">
+		    <div class="modal-content">
+		      <h4>Gefeliciteerd!</h4>
+		      <p>Jij bent de onbetwiste roddelkoningin! Je hebt een score van <span id="finalFlipCounter"></span> gehaald!</p>
+		      <p>Dat betekent dat je een cadeautje hebt verdient! Je cadeautje ligt Hier!</p>
+		    </div>
+		  </div>
+
+		  <div id="afsluitModalNietGehaald" class="modal">
+		    <div class="modal-content">
+		      <h4>Helaas...</h4>
+		      <p>Je roddels kunnen nog wel wat oefening gebruiken... Je hebt een score van <span id="finalFlipCounterNietGehaald"></span> gehaald.</p>
+		      <p>Probeer het nog maar een keertje om je prijs te winnen.</p>
+		    </div>
+		    <div class="modal-footer">
+		      <a onClick="window.location.reload();" href="#!" class="modal-close waves-effect waves-green btn-flat">Probeer opnieuw</a>
+		    </div>
+		  </div>
+	</body>
+</html>
