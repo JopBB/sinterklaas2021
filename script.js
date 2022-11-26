@@ -32,14 +32,40 @@ function like(){
 		alert("huh?")
 	}
 }
-
+messageCounter=0
+hapjeEtenSent=false;
+gesprekAfgerond=false;
 function sendMessage(){
 	var input = $("#userInput");
 	var message = $(".imessage");
 	var newMessage = "<p class='from-me'>" + input.val() + "</p>"
-	console.log(newMessage)
-	message.append(newMessage);
 
+
+	message.append(newMessage);
+	if(messageCounter<1){
+		setTimeout(function(){
+			message.append("<p class='from-them'>Haha, dat is een hele goeie!</p>")
+			setTimeout(function(){
+				message.append("<p class='from-them'>Zin om misschien eens samen een hapje te eten? Je cadeautje zou daar wel eens bij kunnen helpen :)</p>")
+				hapjeEtenSent=true;
+			},5000)
+		},2000)
+	}else if(hapjeEtenSent && !gesprekAfgerond){
+		if(input.val().includes("ja") || input.val().includes("leuk")){
+			setTimeout(function(){
+				message.append("<p class='from-them'>Oke! Gezellig. Je cadeautje kan je vinden waar de wijntjes liggen!</p>")
+				setTimeout(function(){
+					message.append("<p class='from-them'>Zie je snel!</p>")
+					gesprekAfgerond=true;
+				},2000)
+			},2000)
+		}else{
+			message.append("<p class='from-them'>Oh jammer. Nou, dan heb je vast ook niks aan je cadeautje, laat dan maar.</p>")
+			gesprekAfgerond=true;
+		}
+	}
+	input.val('')
+	messageCounter++;
 }	
 
  document.addEventListener('DOMContentLoaded', function() {
