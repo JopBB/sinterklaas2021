@@ -135,6 +135,15 @@ body {
 	font-size: 26px;
 }
 
+#francienNaam{
+	color: #222;
+	font-size: 32px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	border-bottom: 1px solid grey;
+
+}
+
 .content .card .local {
 	display: flex;
 	align-items: center;
@@ -262,6 +271,10 @@ body {
 	height: 60px;
 }
 
+#profielpicture{
+	width:250px;
+	border-radius: 50%;
+}
 
 .imessage {
 	height:600px;
