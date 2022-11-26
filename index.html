@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		    <meta charset="utf-8">
@@ -6,179 +7,146 @@
 		<!-- Compiled and minified JavaScript -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,500&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+		/>
 		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		 <script type="text/javascript" src="script.js"></script>
 	</head>
 	<body>
-		<div class="container" id="tilesWrapper">
-			<h1>Kaartjes gedraaid: <span id="flipCounter">0</span></h1>
-			<div class="row">
-				<div class="col s6">
-					<div onClick="cardClicked(this.id)" class="card tile" id="A1">
-						<div class="cardFrontside card-content">
-							<img width="100%" src="images/nien.png">
-						</div>
-						<div class="cardBackside card-content">
-							Igor
-						</div>
-					</div>
-				</div>
-				<div class="col s6">
-					<div onClick="cardClicked(this.id)" class="card tile" id="C1">
-						<div class="cardFrontside card-content">
-							<img width="100%" src="images/nien.png">
-						</div>
-						<div class="cardBackside card-content">
-							Annemieke
-						</div>
-					</div>
-				</div>
-				
-			</div>
-			<div class="row">
-				<div class="col s6">
-					<div onClick="cardClicked(this.id)" class="card tile" id="B1">
-						<div class="cardFrontside card-content">
-							<img width="100%" src="images/nien.png">
-						</div>
-						<div class="cardBackside card-content">
-							Ellis
-						</div>
-					</div>
-				</div>
-					<div class="col s6">
-					<div onClick="cardClicked(this.id)" class="card tile" id="F2">
-						<div class="cardFrontside card-content">
-							<img width="100%" src="images/nien.png">
-						</div>
-						<div class="cardBackside card-content">
-							Praat zoveel aan een stuk door, het houdt maar niet op, en het is af en toe zelfs zo erg dat het niet meer op 1 kaartje past, gaat maar door en gaat maar door
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col s6">
-					<div onClick="cardClicked(this.id)" class="card tile" id="E2">
-						<div class="cardFrontside card-content">
-							<img width="100%" src="images/nien.png">
-						</div>
-						<div class="cardBackside card-content">
-							Voert niks uit: kan wel heel goed delegeren
-						</div>
-					</div>
-				</div>
-				
-				<div class="col s6">
-					<div onClick="cardClicked(this.id)" class="card tile" id="C2">
-						<div class="cardFrontside card-content">
-							<img width="100%" src="images/nien.png">
-						</div>
-						<div class="cardBackside card-content">
-							Professioneel drama-queen. Heeft een hekel aan Nien
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col s6">
-					<div onClick="cardClicked(this.id)" class="card tile" id="D1">
-						<div class="cardFrontside card-content">
-							<img width="100%" src="images/nien.png">
-						</div>
-						<div class="cardBackside card-content">
-							Lisa
-						</div>
-					</div>
-				</div>
-				<div class="col s6">
-					<div onClick="cardClicked(this.id)" class="card tile" id="B2">
-						<div class="cardFrontside card-content">
-							<img width="100%" src="images/nien.png">
-						</div>
-						<div class="cardBackside card-content">
-							De grootste meeloper die de wereld ooit heeft gezien
-						</div>
-					</div>
-				</div>
+		<div class="container">
 			
-				
-			</div>
-			<div class="row">
-				<div class="col s6">
-					<div onClick="cardClicked(this.id)" class="card tile" id="A2">
-						<div class="cardFrontside card-content">
-							<img width="100%" src="images/nien.png">
-						</div>
-						<div class="cardBackside card-content">
-							Initiatiefloze zoutzak, gelukkig gaat hij weg
-						</div>
-					</div>
-				</div>
-				<div class="col s6">
-					<div onClick="cardClicked(this.id)" class="card tile" id="E1">
-						<div class="cardFrontside card-content">
-							<img width="100%" src="images/nien.png">
-						</div>
-						<div class="cardBackside card-content">
-							Martin
-						</div>
-					</div>
-				</div>
-				
-			</div>
-			<div class="row">
-				<div class="col s6">
-					<div onClick="cardClicked(this.id)" class="card tile" id="F1">
-						<div class="cardFrontside card-content">
-							<img width="100%" src="images/nien.png">
-						</div>
-						<div class="cardBackside card-content">
-							Evy
+			<div class="content">
+				<div class="card card1">
+					<div class="user">
+						<img class="nope1"
+						src="./images/nope.png">
+						<img
+							class="user"
+							src="./images/bob.jpg"
+							alt=""
+						/>
+						<div class="profile">
+							<div class="name">Bob, <span>42</span></div>
+							<div class="local">
+								<i class="fas fa-map-marker-alt"></i>
+								<span>382 km</span>
+							</div>
+							<div class="extrainfo">
+								<i class="fas fa-heart"></i>
+								<span>Werken</span>
+									<br>
+								<i class="fas fa-heart"></i>
+								<span>Boos kijken</span>
+									<br>
+								<i class="fas fa-thumbs-down"></i>
+								<span>Gezelligheid</span>
+
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col s6">
-					<div onClick="cardClicked(this.id)" class="card tile" id="D2">
-						<div class="cardFrontside card-content">
-							<img width="100%" src="images/nien.png">
+				<div class="card card2">
+					<div class="user">
+						<img class="nope2"
+						src="./images/nope.png">
+						<img
+							class="user"
+							src="./images/arnold.jpg"
+							alt=""
+						/>
+						<div class="profile">
+							<div class="name">Arnold, <span>33</span></div>
+							<div class="local">
+								<i class="fas fa-map-marker-alt"></i>
+								<span>300m</span>
+							</div>
+							<div class="extrainfo">
+								<i class="fas fa-heart"></i>
+								<span>20 uur/dag gamen</span>
+									<br>
+								<i class="fas fa-heart"></i>
+								<span>programmeren</span>
+									<br>
+								<i class="fas fa-thumbs-down"></i>
+								<span>Daglicht</span>
+
+							</div>
 						</div>
-						<div class="cardBackside card-content">
-							Kwebelt een eind weg. Kan niet goed voor d'r kinderen en katten zorgen
+					</div>
+				</div>
+				<div class="card card3">
+					<div class="user">
+						<img class="nope3"
+						src="./images/nope.png">
+						<img
+							class="user"
+							src="./images/bruno.jpg"
+							alt=""
+						/>
+						<div class="profile">
+							<div class="name">Bruno, <span>22</span></div>
+							<div class="local">
+								<i class="fas fa-map-marker-alt"></i>
+								<span>3 km</span>
+							</div>
+							<div class="extrainfo">
+								<i class="fas fa-heart"></i>
+								<span>Zwarte piercings</span>
+									<br>
+								<i class="fas fa-heart"></i>
+								<span>Heavy metal</span>
+									<br>
+								<i class="fas fa-thumbs-down"></i>
+								<span>Lachen op foto's</span>
+
+							</div>
 						</div>
+					</div>
+				</div>
+				<div class="card card4">
+					<div class="user">
+						<img class="like"
+						src="./images/like.png">
+						<img
+							class="user"
+							src="./images/jouke.jpeg"
+							alt=""
+						/>
+						<div class="profile">
+							<div class="name">Jouke, <span>35</span></div>
+							<div class="local">
+								<i class="fas fa-map-marker-alt"></i>
+								<span>5 minuutjes wandelen</span>
+							</div>
+							<div class="extrainfo">
+								<i class="fas fa-heart"></i>
+								<span>Stedentrips</span>
+									<br>
+								<i class="fas fa-heart"></i>
+								<span>Valencia</span>
+									<br>
+								<i class="fas fa-heart"></i>
+								<span>Schepen blussen</span>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="buttons">
+					<div class="no" onclick="dislike()">
+						<i class="fas fa-times"></i>
+					</div>
+					<div class="heart" onclick="like()">
+						<i class="fas fa-heart"></i>
 					</div>
 				</div>
 			</div>
 		</div>
-			<div id="opstartModal" class="modal">
-		    <div class="modal-content">
-		      <h4>Welkom bij roddelmemory!</h4>
-		      <p>Jij denkt dat je de beste roddeltante van Lingewaard bent? Test het hier, met het enige echte roddelmemory! </p>
-		      <p>Bij memory probeer je steeds twee kaartjes te vinden die bij elkaar horen. Weet jij welke mensen bij welke roddels horen? Probeer het nu!</p>
-		      <p>Per keer dat je een kaartje omdraait, krijg je een strafpunt. Haal jij een score van 30 punten of minder, dan neem jij de grote prijs mee naar huis!</p>
-		    </div>
-		    <div class="modal-footer">
-		      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Ik snap het!</a>
-		    </div>
-		  </div>
-
-		  <div id="afsluitModal" class="modal">
-		    <div class="modal-content">
-		      <h4>Gefeliciteerd!</h4>
-		      <p>Jij bent de onbetwiste roddelkoningin! Je hebt een score van <span id="finalFlipCounter"></span> gehaald!</p>
-		      <p>Dat betekent dat je de grote roddelmemory-prijs hebt verdient! Gefeliciteerd!! Je kan de prijs ophalen bij de quizmaster!</p>
-		    </div>
-		  </div>
-
-		  <div id="afsluitModalNietGehaald" class="modal">
-		    <div class="modal-content">
-		      <h4>Helaas...</h4>
-		      <p>Je roddels kunnen nog wel wat oefening gebruiken... Je hebt een score van <span id="finalFlipCounterNietGehaald"></span> gehaald.</p>
-		      <p>Probeer het nog maar een keertje om je prijs te winnen.</p>
-		    </div>
-		    <div class="modal-footer">
-		      <a onClick="window.location.reload();" href="#!" class="modal-close waves-effect waves-green btn-flat">Probeer opnieuw</a>
-		    </div>
-		  </div>
 	</body>
 </html>

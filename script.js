@@ -1,91 +1,46 @@
-var flipCounter = 0;
 
-var cards = {
-	A1: {
-		id: "A1",
-		isFlipped:false,
-		completed:false,
-		buddy: "A2",
-		completedColor: "#e6ee9c"
-	},
-	A2: {
-		id: "A2",
-		isFlipped:false,
-		completed:false,
-		buddy: "A1",
-		completedColor: "#e6ee9c"
-	},
-	B1: {
-		id: "B1",
-		isFlipped:false,
-		completed:false,
-		buddy: "B2",
-		completedColor: "#a5d6a7"
-	},
-	B2: {
-		id: "B2",
-		isFlipped:false,
-		completed:false,
-		buddy: "B1",
-		completedColor: "#a5d6a7"
-	},
-	C1: {
-		id: "C1",
-		isFlipped:false,
-		completed:false,
-		buddy: "C2",
-		completedColor: "#4db6ac"
-	},
-	C2: {
-		id: "C2",
-		isFlipped:false,
-		completed:false,
-		buddy: "C1",
-		completedColor: "#4db6ac"
-	},
-	D1: {
-		id: "D1",
-		isFlipped:false,
-		completed:false,
-		buddy: "D2",
-		completedColor: "#ef5350"
-	},
-	D2: {
-		id: "D2",
-		isFlipped:false,
-		completed:false,
-		buddy: "D1",
-		completedColor: "#ef5350"
-	},
-	E1: {
-		id: "E1",
-		isFlipped:false,
-		completed:false,
-		buddy: "E2",
-		completedColor: "#ce93d8"
-	},
-	E2: {
-		id: "E2",
-		isFlipped:false,
-		completed:false,
-		buddy: "E1",
-		completedColor: "#ce93d8"
-	},
-	F1: {
-		id: "F1",
-		isFlipped:false,
-		completed:false,
-		buddy: "F2",
-		completedColor: "#ef9a9a"
-	},
-	F2: {
-		id: "F2",
-		isFlipped:false,
-		completed:false,
-		buddy: "F1",
-		completedColor: "#ef9a9a"
+disliked = 0;
+
+function dislike(){
+	if(disliked === 3){
+		alert("Deze jongen kan je toch niet afwijzen?!")
+		return;
+	}
+	var currentCardNumber = disliked+1
+	var nextCardNumber = disliked+2
+	var currentCard = $(".card"+currentCardNumber);
+	var nextCard = $(".card"+nextCardNumber);
+	var currentNope = $(".nope"+currentCardNumber)
+
+	currentNope.css("display", "inline-block")
+	setTimeout(function(){
+		currentCard.css("display", "none")
+		nextCard.css("display", "inline-block")
+		disliked++;
+	}, 2000)
+
+}
+
+function like(){
+	if(disliked === 3){
+		like = $(".like");
+		like.css("display", "inline-block")
+		setTimeout(function(){
+			window.location.assign('messages.html')
+		}, 2000)
+	}else{
+		alert("huh?")
 	}
 }
+
+function sendMessage(){
+	var input = $("#userInput");
+	var message = $(".imessage");
+	var newMessage = "<p class='from-me'>" + input.val() + "</p>"
+	console.log(newMessage)
+	message.append(newMessage);
+
+}	
 
  document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
