@@ -278,7 +278,7 @@ body {
 
 .imessage {
 	height:600px;
-	overflow: scroll;
+	overflow: auto;
   border-radius: 0.25rem;
   display: flex;
   flex-direction: column;
