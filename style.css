@@ -260,6 +260,13 @@ body {
 	transition: 0.2s transform;
 }
 
+.hartje{
+	position: absolute;
+	top:30px;
+	right:30px;
+	font-size: 20pt;
+}
+
 .content .buttons .no:hover,
 .content .buttons .star:hover,
 .content .buttons .heart:hover {
