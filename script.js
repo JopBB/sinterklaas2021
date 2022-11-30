@@ -55,7 +55,7 @@ function sendMessage(){
 	$(".imessage").scrollTop($(".imessage").height()+1000);
 
 	if(laatstehartje){
-		if(input.val().includes("leuk") || input.val().includes("knap") || input.val().includes("mooi") || input.val().includes("grappig") || input.val().includes("fijn")){
+		if(input.val().toLowerCase().includes("leuk") || input.val().toLowerCase().includes("knap") || input.val().toLowerCase().includes("mooi") || input.val().toLowerCase().includes("grappig") || input.val().toLowerCase().includes("fijn")){
 			hartjelevel.html("4/4");
 			hartjeicon.css("color","red");
 			setTimeout(function(){
@@ -66,7 +66,7 @@ function sendMessage(){
 	}
 
 	if(raadsel1 && !raadsel2 && !laatstehartje){
-		if(input.val().includes("schiphol")){
+		if(input.val().toLowerCase().includes("Schiphol")){
 			setTimeout(function(){
 				message.append("<p class='from-them'>Ooh ja! Goed gevonden, dankjewel!</p>")
 				$(".imessage").scrollTop($(".imessage").height()+1000);
@@ -80,12 +80,12 @@ function sendMessage(){
 			},3000)
 		}else{
 			setTimeout(function(){
-				message.append("<p class='from-them'>Nee, het lijkt me niet dat ik via "+inputval+" bij het schip kan komen! Probeer het nog eens?</p>")
+				message.append("<p class='from-them'>Nee, het lijkt me niet dat ik via \" "+inputval+" \" bij het schip kan komen! Probeer het nog eens?</p>")
 				$(".imessage").scrollTop($(".imessage").height()+1000);
 			},3000)
 		}
 	}else if(raadsel1 && raadsel2 && !laatstehartje){
-		if(input.val().includes("8") || input.val().includes("acht")){
+		if(input.val().includes("8") || input.val().toLowerCase().includes("acht")){
 			setTimeout(function(){
 				message.append("<p class='from-them'>Ooh tuurlijk! Ik kan het schip op! Dankjewel!</p>")
 				$(".imessage").scrollTop($(".imessage").height()+1000);
@@ -119,7 +119,7 @@ function sendMessage(){
 				messageCounter++;
 			},3500)
 		},2000)
-	}else if(!raadsel1 && !raadsel2 && input.val().includes('cadeau')){
+	}else if(!raadsel1 && !raadsel2 && (input.val().toLowerCase().includes('cadeau') || input.val().toLowerCase().includes('kado')  )){
 		setTimeout(function(){
 			message.append("<p class='from-them'>Ik kan je helpen je cadeau te vinden! Maar ik heb eerst wat hulp nodig...</p>")
 			$(".imessage").scrollTop($(".imessage").height()+1000);
