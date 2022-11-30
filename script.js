@@ -38,68 +38,75 @@ function like(){
 
 
 messageCounter=0
-hapjeEtenSent=false;
 gesprekAfgerond=false;
-raadselSent=false;
+raadsel1=false;
+raadsel2=false;
+
 function sendMessage(){
 	var input = $("#userInput");
 	var message = $(".imessage");
 	var newMessage = "<p class='from-me'>" + input.val() + "</p>"
-
+	var inputval = input.val();
 
 	message.append(newMessage);
 	$(".imessage").scrollTop($(".imessage").height()+1000);
-	if(raadselSent){
-		console.log('lalalala')
-		if(input.val().includes("1") || input.val().includes("een")){
+
+	if(raadsel1 && !raadsel2){
+		if(input.val().includes("schiphol")){
 			setTimeout(function(){
-				message.append("<p class='from-them'>Helemaal goed! Je cadeautje moet je zoeken in de gangkast! Zie je snel!</p>")
+				message.append("<p class='from-them'>Ooh ja! Goed gevonden, dankjewel!</p>")
 				$(".imessage").scrollTop($(".imessage").height()+1000);
-				gesprekAfgerond=true;
+				setTimeout(function(){
+					message.append("<p class='from-them'>Ik ben bijna bij het schip aangekomen, maar ik loop nu tegen nog een probleempje aan... Ik weet niet zeker of ik het schip wel op kom. Aan het schip hangt een laddertje van drie meter lengte met om de 20 cm een sport. Als het eb is, steken er acht sporten uit het water. Bij vloed stijgt het water met 1.65 meter. Het is nu vloed, en ik weet niet zeker of ik wel op de boot kom. Kan jij anders alvast even uitrekenen: hoeveel sporten er tijdens vloed nog boven het water uitkomen?</p>")
+					$(".imessage").scrollTop($(".imessage").height()+1000);
+					raadsel2=true;
+				},2000)
 			},3000)
-			gesprekAfgerond=true;
 		}else{
 			setTimeout(function(){
-				message.append("<p class='from-them'>Nee, dat klopt niet helemaal! Probeer het nog eens?</p>")
+				message.append("<p class='from-them'>Nee, het lijkt me niet dat ik via "+inputval+" bij het schip kan komen! Probeer het nog eens?</p>")
+				$(".imessage").scrollTop($(".imessage").height()+1000);
+			},3000)
+		}
+	}else if(raadsel1 && raadsel2){
+		if(input.val().includes("8") || input.val().includes("acht")){
+			setTimeout(function(){
+				message.append("<p class='from-them'>Ooh tuurlijk! Ik kan het schip op! Dankjewel!</p>")
+				$(".imessage").scrollTop($(".imessage").height()+1000);
+				setTimeout(function(){
+					message.append("<p class='from-them'>Het schip is geblust dankzij jouw hulp. Nu zal ik je helpen met het vinden van je cadeau, maar alleen als je belooft die eens te gebruiken tijdens een date met mij! Je kan hem vinden waar de wijn opgeslagen ligt.</p>");
+					$(".imessage").scrollTop($(".imessage").height()+1000);
+				},2000)
+			},3000)
+		}else{
+			setTimeout(function(){
+				message.append("<p class='from-them'>Ik geloof niet dat dat klopt! Probeer het nog eens?</p>")
 				$(".imessage").scrollTop($(".imessage").height()+1000);
 			},3000)
 		}
 	}
+
 	if(messageCounter<1){
 		setTimeout(function(){
-			message.append("<p class='from-them'>Haha, dat is een hele goeie!</p>")
+			message.append("<p class='from-them'>Haha, zelden zo'n goede openingszin gehoord!</p>")
 			$(".imessage").scrollTop($(".imessage").height()+1000);
 			setTimeout(function(){
-				message.append("<p class='from-them'>Heb je misschien zin om eens samen een hapje te eten? Je cadeautje zou daar wel eens bij kunnen helpen :) Dan help ik je met het vinden van je cadeau!</p>")
-				hapjeEtenSent=true;
+				message.append("<p class='from-them'>Kan ik je ergens mee helpen?</p>")
+				$(".imessage").scrollTop($(".imessage").height()+1000);
+				messageCounter++;
+			},5000)
+		},2000)
+	}else if(!raadsel1 && !raadsel2 && input.val().includes('cadeau')){
+		setTimeout(function(){
+			message.append("<p class='from-them'>Ik kan je helpen je cadeau te vinden! Maar ik heb eerst wat hulp nodig...</p>")
+			$(".imessage").scrollTop($(".imessage").height()+1000);
+			setTimeout(function(){
+				message.append("<p class='from-them'>Ik moet een schip blussen, maar ik weet niet hoe ik er moet komen. Weet jij hoe ik er kan komen? Ik heb deze hint gekregen:</p>")
+				message.append("<img src='./images/boot.jpg'>")
+				raadsel1=true;
 				$(".imessage").scrollTop($(".imessage").height()+1000);
 			},5000)
 		},2000)
-	}else if(hapjeEtenSent && !gesprekAfgerond && !raadselSent){
-
-		if(input.val().includes("ja") || input.val().includes("leuk")){
-			setTimeout(function(){
-				message.append("<p class='from-them'>Oke! Gezellig. Dan zal ik je nu helpen met het vinden van je cadeau. Als je dit raadsel oplost zal ik je helpen:</p>")
-				$(".imessage").scrollTop($(".imessage").height()+1000);
-				setTimeout(function(){
-					message.append("<p class='from-them'>Onderweg naar de winkel liep ik een vrouw tegemoet. Deze vrouw had 2 rugzakken met in elke rugzak 3 katten, met elk 3 kittens. Katten en mensen bij elkaar, met z’n hoe velen liepen we naar de winkel?</p>")
-					raadselSent=true;
-					$(".imessage").scrollTop($(".imessage").height()+1000);
-				},3000)
-			},5000)
-		}else{
-			setTimeout(function(){
-				message.append("<p class='from-them'>Oh jammer. Nou, dan heb je vast ook niks aan je cadeautje, laat dan maar.</p>")
-				gesprekAfgerond=true;
-				$(".imessage").scrollTop($(".imessage").height()+1000);
-			},2000)
-		}
-	}else if(gesprekAfgerond && input.val().includes("sorry")){
-		setTimeout(function(){
-				message.append("<p class='from-them'>Nou oke dan.. Toch zin om een keer met me te eten?")
-				$(".imessage").scrollTop($(".imessage").height()+1000);
-				gesprekAfgerond=false;
-			},5000)
 	}
 	input.val('')
 	messageCounter++;
